@@ -1,0 +1,1 @@
+# Docker git client
