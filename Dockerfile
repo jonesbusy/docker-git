@@ -2,7 +2,7 @@
 FROM alpine:3.6 as builder
 
 # Build arguments
-ARG GIT_VERSION=2.15.1
+ARG GIT_VERSION=2.16.1
 ARG http_proxy=
 
 # Compilation environment
