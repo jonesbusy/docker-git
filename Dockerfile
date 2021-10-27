@@ -1,8 +1,8 @@
 # Base image to build git
-FROM alpine:3.6 as builder
+FROM alpine:3.13.6 as builder
 
 # Build arguments
-ARG GIT_VERSION=2.16.1
+ARG GIT_VERSION=2.33.1
 ARG http_proxy=
 
 # Compilation environment
@@ -20,7 +20,7 @@ RUN apk add --no-cache --virtual .build-deps ca-certificates build-base openssh-
 	
 
 # Run stage
-FROM alpine:3.6
+FROM alpine:3.13.6
 COPY --from=builder /usr/bin/git /usr/bin/git
 ADD files/entrypoint.sh /entrypoint.sh
 
