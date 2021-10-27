@@ -9,7 +9,7 @@ ARG http_proxy=
 ENV LIBRARY_PATH="/lib:/usr/lib" MAKEFILE_ARGS="NO_GETTEXT=1 NO_SYS_POLL_H=1 NO_TCLTK=1"
 
 # Configure user and add some tools
-RUN apk add --no-cache --virtual .build-deps ca-certificates build-base openssh-client openssl gnupg autoconf zlib-dev python-dev wget && \
+RUN apk add --no-cache --virtual .build-deps ca-certificates build-base openssh-client openssl gnupg autoconf zlib-dev python3-dev wget && \
 	update-ca-certificates && \
 	wget --quiet https://github.com/git/git/archive/v${GIT_VERSION}.tar.gz && \
 	tar xf v${GIT_VERSION}.tar.gz && \
